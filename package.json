@@ -14,21 +14,18 @@
         "@theia/preferences": "next",
         "@theia/preview": "next",
         "@theia/search-in-workspace": "next",
-        "@theia/terminal": "next",
-        "js-yaml": "^3.13.1",
-        "debug": "^2.6.9"
+        "@theia/terminal": "next"
     },
     "devDependencies": {
-        "@theia/cli": "next",
-        "@theia/debug": "latest"
+        "@theia/cli": "next"
     },
     "scripts": {
-        "prepare": "yarn run clean && yarn build && yarn run download:plugins",
+        "prepare": "NODE_OPTIONS=\"--max_old_space_size=4096\" yarn run clean && yarn build && yarn run download:plugins",
         "serve": "yarn run clean && yarn build-prod && yarn run download:plugins && theia start --plugins=local-dir:plugins --hostname 0.0.0.0 --port 8080",
-        "build-prod": "theia build --mode production",
+        "build-prod": "NODE_OPTIONS=\"--max_old_space_size=4096\" theia build --mode production",
         "clean": "theia clean",
-        "build": "theia build --mode development",
-        "start": "theia start --plugins=local-dir:plugins",
+        "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" theia build --mode development",
+        "start": "NODE_OPTIONS=\"--max_old_space_size=4096\" theia start --plugins=local-dir:plugins --hostname 0.0.0.0 --port 8080",
         "download:plugins": "theia download:plugins"
     },
     "theiaPluginsDir": "plugins",
