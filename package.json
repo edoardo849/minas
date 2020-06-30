@@ -14,7 +14,9 @@
         "@theia/preferences": "next",
         "@theia/preview": "next",
         "@theia/search-in-workspace": "next",
-        "@theia/terminal": "next"
+        "@theia/terminal": "next",
+        "js-yaml": "^3.13.1",
+        "debug": "^2.6.9"
     },
     "devDependencies": {
         "@theia/cli": "next",

@@ -8,9 +8,23 @@ To make Typescript work, need to set:
 
 ```json
 {
-  "workbench.iconTheme": "theia-file-icons",
   "typescript.tsserver.log": "normal",
   "typescript.tsdk": "./node_modules/typescript/lib"
+}
+```
+
+To make Go work, need to set:
+
+```json
+{
+  "go.useLanguageServer": true,
+  "go.languageServerExperimentalFeatures": {
+    "diagnostics": true,
+    "documentLink": true
+  },
+  "[go]": {
+    "editor.formatOnSave": true
+  }
 }
 ```
 
